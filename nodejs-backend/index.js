@@ -1,2 +1,8 @@
 
-console.log("testing");
+const express = require("express");
+const app = express();
+const PORT = 3000;
+
+app.listen(PORT, () => {
+    console.log(`Listening for connections on port ${PORT}`);
+});
