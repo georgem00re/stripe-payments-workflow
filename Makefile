@@ -1,6 +1,9 @@
 
-backend-install-dependencies:
+nodejs-backend-install:
 	NVM_DIR="$${HOME}/.nvm" && . "$${NVM_DIR}/nvm.sh" && cd nodejs-backend && nvm use && npm install
 
-backend-start:
+nodejs-backend-start:
 	NVM_DIR="$${HOME}/.nvm" && . "$${NVM_DIR}/nvm.sh" && cd nodejs-backend && nvm use && npm start
+
+postgres-database-start:
+	cd postgres-database && docker compose up --build
