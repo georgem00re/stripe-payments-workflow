@@ -3,7 +3,10 @@ const express = require("express");
 const app = express();
 const PORT = 3000;
 require('dotenv').config();
-const { fetchProducts, pool } = require("./modules/db.js")
+const { fetchProducts } = require("./modules/db.js")
+const cors = require("cors");
+
+app.use(cors());
 
 app.get("/product", async (req, res) => {
     try {
