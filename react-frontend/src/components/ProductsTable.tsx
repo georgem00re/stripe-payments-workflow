@@ -32,13 +32,21 @@ export const ProductsTable = ({ products }: ProductsTableProps) => {
             </tr>
             </thead>
             <tbody>
-                {products.map(product => (
-                    <tr key={product.productId}>
-                        <td style={tdStyle}>{product.productId}</td>
-                        <td style={tdStyle}>{(product.priceInPence / 100).toFixed(2)}</td>
-                    </tr>
-                ))}
+            {products.map(product => (
+                <tr key={product.productId}>
+                    <td style={tdStyle}>{product.productId}</td>
+                    <td style={tdStyle}>{(product.priceInPence / 100).toFixed(2)}</td>
+                </tr>
+            ))}
+            <tr>
+                <td style={tdStyle}><strong>Total</strong></td>
+                <td style={tdStyle}>
+                    <strong>
+                        {(products.reduce((sum, p) => sum + p.priceInPence, 0) / 100).toFixed(2)}
+                    </strong>
+                </td>
+            </tr>
             </tbody>
         </table>
-    )
+    );
 }
