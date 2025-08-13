@@ -9,7 +9,13 @@ const pool = new Pool({
 async function fetchProducts() {
     const { rows } = await pool.query({
         name: "listProducts",
-        text: "SELECT product_id, price_in_pence, paid_for FROM product"
+        text: `
+            SELECT
+                product_id AS "productId",
+                price_in_pence AS "priceInPence",
+                paid_for AS "paidFor"
+            FROM product
+        `
     });
     return rows;
 }
