@@ -1,7 +1,7 @@
 import React from "react";
 import "./index.css";
 
-const App = () => {
+const App: React.FC = () => {
     return (
         <h1>React Application</h1>
     );
