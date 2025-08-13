@@ -1,11 +1,7 @@
+import {Product} from "../schemas/Product";
 
 interface ProductsTableProps {
     products: Product[]
-}
-
-interface Product {
-    productId: string;
-    priceInPence: number;
 }
 
 export const ProductsTable = ({ products }: ProductsTableProps) => {
@@ -36,12 +32,12 @@ export const ProductsTable = ({ products }: ProductsTableProps) => {
             </tr>
             </thead>
             <tbody>
-            {products.map(product => (
-                <tr key={product.productId}>
-                    <td style={tdStyle}>{product.productId}</td>
-                    <td style={tdStyle}>{(product.priceInPence / 100).toFixed(2)}</td>
-                </tr>
-            ))}
+                {products.map(product => (
+                    <tr key={product.productId}>
+                        <td style={tdStyle}>{product.productId}</td>
+                        <td style={tdStyle}>{(product.priceInPence / 100).toFixed(2)}</td>
+                    </tr>
+                ))}
             </tbody>
         </table>
     )
