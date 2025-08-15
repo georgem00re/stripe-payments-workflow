@@ -6,7 +6,7 @@ export const NavigationBar = () => {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        padding: "10px 20px",
+        padding: "15px 20px",
         backgroundColor: "#0070f3",
         color: "#fff",
         fontFamily: "Arial, sans-serif",
