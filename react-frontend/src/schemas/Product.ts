@@ -2,7 +2,7 @@
 export interface Product {
     productId: string;
     productName: string;
-    productUrl: string;
+    productImageUrl: string;
     priceInPence: number;
     paidFor: boolean;
 }

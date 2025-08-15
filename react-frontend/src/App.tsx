@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import "./index.css";
-import {ProductsTable} from "./components/ProductsTable";
+import {ProductsGallery} from "./components/ProductsGallery";
 import {Product} from "./schemas/Product";
 import {dataService} from "./services/data.service";
 
@@ -17,7 +17,7 @@ const App: React.FC = () => {
         fetchProducts()
     }, []);
 
-    return <ProductsTable products={products}/>
+    return <ProductsGallery products={products}/>
 }
 
 export default App;
