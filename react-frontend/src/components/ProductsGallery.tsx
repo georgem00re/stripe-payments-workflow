@@ -1,5 +1,4 @@
-import {Product} from "../schemas/Product";
-
+import { Product } from "../schemas/Product";
 import React from "react";
 
 interface ProductsGalleryProps {
@@ -22,6 +21,9 @@ export const ProductsGallery = ({ products }: ProductsGalleryProps) => {
         boxShadow: "0 2px 5px rgba(0,0,0,0.1)",
         textAlign: "center",
         backgroundColor: "#fff",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
     };
 
     const imgStyle: React.CSSProperties = {
@@ -32,13 +34,33 @@ export const ProductsGallery = ({ products }: ProductsGalleryProps) => {
         marginBottom: "12px",
     };
 
+    const buttonStyle: React.CSSProperties = {
+        marginTop: "12px",
+        padding: "10px 16px",
+        border: "none",
+        borderRadius: "8px",
+        backgroundColor: "#0070f3",
+        color: "#fff",
+        cursor: "pointer",
+        fontWeight: "bold",
+    };
+
     return (
         <div style={galleryStyle}>
             {products.map((product) => (
                 <div key={product.productId} style={cardStyle}>
-                    <img src={product.productImageUrl} alt={product.productName} style={imgStyle} />
-                    <h3>{product.productName}</h3>
-                    <p>£{(product.priceInPence / 100).toFixed(2)}</p>
+                    <div>
+                        <img
+                            src={product.productImageUrl}
+                            alt={product.productName}
+                            style={imgStyle}
+                        />
+                        <h3>{product.productName}</h3>
+                        <p>£{(product.priceInPence / 100).toFixed(2)}</p>
+                    </div>
+                    <button style={buttonStyle} onClick={() => alert("Button clicked!")}>
+                        Add to Cart
+                    </button>
                 </div>
             ))}
         </div>
