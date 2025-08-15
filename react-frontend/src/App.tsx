@@ -3,8 +3,9 @@ import "./index.css";
 import {ProductsGallery} from "./components/ProductsGallery";
 import {Product} from "./schemas/Product";
 import {dataService} from "./services/data.service";
-import {BrowserRouter, Navigate, Route, Router, Routes} from "react-router";
+import {BrowserRouter, Navigate, Route, Routes} from "react-router";
 import {ShoppingCart} from "./components/ShoppingCart";
+import {NavigationBar} from "./components/NavigationBar";
 
 const App: React.FC = () => {
     const [products, setProducts] = useState<Product[]>([])
@@ -23,6 +24,7 @@ const App: React.FC = () => {
 
     return (
         <BrowserRouter>
+            <NavigationBar/>
             <Routes>
                 <Route path="/" element={<Navigate to="/products" replace />} />
                 <Route path="/products" element={productsGallery} />
