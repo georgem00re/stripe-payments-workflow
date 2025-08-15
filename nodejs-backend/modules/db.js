@@ -12,6 +12,8 @@ async function fetchProducts() {
         text: `
             SELECT
                 product_id AS "productId",
+                product_name AS "productName",
+                product_image_url AS "productImageUrl",
                 price_in_pence AS "priceInPence",
                 paid_for AS "paidFor"
             FROM product
